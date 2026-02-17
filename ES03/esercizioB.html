@@ -1,0 +1,16 @@
+let m = parseFloat(prompt("Inserisci il coefficiente angolare (m):"));
+let q = parseFloat(prompt("Inserisci il termine noto (q):"));
+
+// Calcolo punti specifici
+let y_meno1 = m * (-1) + q;
+let y_dieci = m * 10 + q;
+
+// Intersezioni
+let inter y = q;
+let inter_x = (m !== 0) ? (-q / m) : "Parallela all'asse x";
+
+console.log(" --- ANALISI RETTA y = " + m + "x + " + q + " --- ");
+console.log("Punto con x = -1: (-1, " + y_meno1 + ")");
+console.log("Punto con x = 10: (10, " + y_dieci +")");
+console.log("Intersezione asse Y: (0, " + inter y + ")");
+console.log("Intersezione asse X: (" + inter_x + ", 0)");|
