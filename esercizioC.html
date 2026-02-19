@@ -1,12 +1,15 @@
-<h1>Es03C</h1>
+<h1>Es03C - Esito Esame</h1>
 <script>
-// Dichiarazione e assegnazione del voto
-let voto = 7;
+    let voto = 7;
+    let esito = (voto >= 6) ? "Promosso" : "Bocciato";
 
-// Utilizzo dell'operatore ternario per l'esito
-let esito = (voto >= 6) ? "Promosso" : "Bocciato";
+    // Questo lo vedi nella console (F12)
+    console.log("Voto ottenuto: " + voto);
+    
+    // Questo farà apparire una finestrella pop-up
+    alert("Voto: " + voto + "\nEsito: " + esito);
 
-// Output del risultato
-console.log("Voto ottenuto: " + voto);
-console.log("Esito finale: " + esito);
+    // Questo scriverà direttamente sulla pagina bianca
+    document.write("<h2>Risultato: " + esito + "</h2>");
 </script>
+
