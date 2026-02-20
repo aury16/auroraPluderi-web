@@ -1,0 +1,20 @@
+<h1>Es03D - Scope di Let e Var</h1>
+<script>
+console.log("--- TEST CON LET ---");
+try {
+    for (let i = 0; i < 3; i++) {
+        console.log("Valore dentro il ciclo (let): " + i);
+    }
+    // Questo darà errore perché 'i' non esiste fuori dal for
+    console.log("Valore fuori dal ciclo (let): " + i);
+} catch (error) {
+    console.log("Errore previsto con let: " + error.message);
+}
+
+console.log("\n--- TEST CON VAR ---");
+for (var j = 0; j < 3; j++) {
+    console.log("Valore dentro il ciclo (var): " + j);
+}
+// Questo funzionerà perché 'var' non ha scope di blocco
+console.log("Valore fuori dal ciclo (var): " + j);
+</script>
