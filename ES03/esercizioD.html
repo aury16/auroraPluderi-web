@@ -1,21 +1,24 @@
-<h1>ES03D</h1>
+<h1>ES03D - Test Scope (Let vs Var)</h1>
 <script>
+// --- TEST CON LET ---
 console.log("Inizio test con let:");
-for (let i = 0; i < 3; i++) {
-console.log("Valore dentro il ciclo (let): " + i);
-
-console.log("Valore fuori dal ciclo (let): " + i);
-
-try
-
+try {
+    for (let i = 0; i < 3; i++) {
+        console.log("Valore dentro il ciclo (let): " + i);
+    }
+    // Questa riga darà errore perché 'i' (let) non esiste fuori dal ciclo
+    console.log("Valore fuori dal ciclo (let): " + i);
 } catch (error) {
-console.log("Errore con let: " + error.message);
+    console.log("Errore con let: " + error.message);
+    alert("Test LET: Errore catturato! 'i' non esiste fuori dal ciclo.");
+}
 
-console.log(
---- TEST CON VAR
-console.log("Inizio test con var:")
-for (var j = 0; j < 3; j++)
-console.log("Valore dentro il ciclo (var): " + j);
-
+// --- TEST CON VAR ---
+console.log("Inizio test con var:");
+for (var j = 0; j < 3; j++) {
+    console.log("Valore dentro il ciclo (var): " + j);
+}
+// Questa riga funziona perché 'var' è visibile fuori dal ciclo
 console.log("Valore fuori dal ciclo (var): " + j);
+alert("Test VAR: Il valore di 'j' fuori dal ciclo è " + j);
 </script>
