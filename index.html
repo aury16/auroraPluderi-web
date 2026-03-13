@@ -9,13 +9,11 @@
     body {
       margin: 0;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      /* Sfondo spaziale */
       background: url('https://wallpapers.com/images/featured-full/universo-z8q8d1d7d1ja4b92.jpg') no-repeat center center fixed;
       background-size: cover;
       color: #333;
     }
 
-    /* Navbar */
     .navbar {
       overflow: hidden;
       background-color: #00387b;
@@ -68,12 +66,11 @@
 
     .show { display: block; }
 
-    /* Header Trasparente */
     .header-section {
       text-align: center;
       padding: 50px 20px;
       background-color: rgba(232, 240, 254, 0.85);
-      backdrop-filter: blur(4px); /* Effetto vetro sfocato */
+      backdrop-filter: blur(4px);
     }
 
     .header-section h1 {
@@ -83,7 +80,6 @@
       letter-spacing: 1px;
     }
 
-    /* Card Centrale */
     .card {
       background-color: rgba(255, 255, 255, 0.95);
       margin: 30px auto;
@@ -147,11 +143,14 @@
     <button class="dropbtn" onclick="toggleDropdown(event, 'menuEsercizi')">
       📂 Esercizi <i class="fa fa-caret-down"></i>
     </button>
+
+    <!-- 🔥 MENU ESERCIZI CORRETTO -->
     <div class="dropdown-content" id="menuEsercizi">
-      <a href="esercizioA.html">Esercizio A</a>
-      <a href="esercizioB.html">Esercizio B</a>
-      <a href="esercizioC.html">Esercizio C</a>
-      <a href="esercizioD.html">Esercizio D</a>
+      <a href="ES03/esercizioA.html">Esercizio A</a>
+      <a href="ES03/esercizioB.html">Esercizio B</a>
+      <a href="ES03/esercizioC.html">Esercizio C</a>
+      <a href="ES03/esercizioC.html">Esercizio D</a>
+      <a href="ES04/esercizio3.html">Esercizio 3 (ES04)</a>
     </div>
   </div>
 
@@ -177,8 +176,8 @@
     <div class="box">
       <h3>🚀 Risorse Attive</h3>
       <ul>
-        <li><a href="esercizioA.html" class="link-custom"><i class="fa fa-file-code-o"></i> Esercizio A</a></li>
-        <li><a href="esercizioB.html" class="link-custom"><i class="fa fa-file-code-o"></i> Esercizio B</a></li>
+        <li><a href="a.html" class="link-custom"><i class="fa fa-file-code-o"></i> Esercizio A</a></li>
+        <li><a href="esercizioa.html" class="link-custom"><i class="fa fa-file-code-o"></i> Esercizio B</a></li>
         <li><a href="style.css" class="link-custom"><i class="fa fa-css3"></i> style.css</a></li>
         <li><a href="script.js" class="link-custom"><i class="fa fa-terminal"></i> script.js</a></li>
       </ul>
@@ -203,7 +202,6 @@
 <script>
   function toggleDropdown(event, id) {
     event.stopPropagation();
-    // Chiude gli altri menu se aperti
     var dropdowns = document.getElementsByClassName("dropdown-content");
     for (var i = 0; i < dropdowns.length; i++) {
       if (dropdowns[i].id !== id) {
@@ -213,7 +211,6 @@
     document.getElementById(id).classList.toggle("show");
   }
 
-  // Chiude se clicchi fuori
   window.onclick = function(e) {
     if (!e.target.matches('.dropbtn')) {
       var dropdowns = document.getElementsByClassName("dropdown-content");
