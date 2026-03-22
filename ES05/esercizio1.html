@@ -1,71 +1,52 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Esercizio Persona</title>
-</head>
 <body>
 
-  <!-- Titolo della pagina -->
-  <h2>Inserisci i tuoi dati</h2>
+<!-- Titolo -->
+<h2>Inserisci i tuoi dati</h2>
 
-  <!-- Form per inserire i dati -->
-  <form id="formPersona">
+<!-- Form -->
+<form id="form">
 
-    <!-- Campo per il nome -->
-    Nome: <input type="text" id="nome"><br><br>
+  <!-- Input nome -->
+  <input type="text" id="nome" placeholder="Nome"><br><br>
 
-    <!-- Campo per il cognome -->
-    Cognome: <input type="text" id="cognome"><br><br>
+  <!-- Input cognome -->
+  <input type="text" id="cognome" placeholder="Cognome"><br><br>
 
-    <!-- Campo per l'età -->
-    Età: <input type="number" id="eta"><br><br>
+  <!-- Input età -->
+  <input type="number" id="eta" placeholder="Età"><br><br>
 
-    <!-- Pulsante per inviare il form -->
-    <button type="submit">Invia</button>
+  <!-- Pulsante -->
+  <button>Invia</button>
 
-  </form>
+</form>
 
-  <script>
+<script>
 
-    // Prendo il form tramite il suo id
-    let form = document.getElementById("formPersona");
+// Quando invio il form
+document.getElementById("form").onsubmit = function(e) {
 
-    // Aggiungo un "ascoltatore" di eventi al form
-    // Questo codice si attiva quando l'utente preme il pulsante "Invia"
-    form.addEventListener("submit", function(event) {
+  // Blocca il refresh della pagina
+  e.preventDefault();
 
-      // Blocca il comportamento predefinito del form
-      // (cioè il ricaricamento della pagina)
-      event.preventDefault();
+  // Prendo i valori dagli input
+  let nome = document.getElementById("nome").value;
+  let cognome = document.getElementById("cognome").value;
+  let eta = document.getElementById("eta").value;
 
-      // Prendo il valore inserito nel campo nome
-      let nome = document.getElementById("nome").value;
+  // Creo l'oggetto persona
+  let persona = {
+    nome: nome,
+    cognome: cognome,
+    eta: eta
+  };
 
-      // Prendo il valore inserito nel campo cognome
-      let cognome = document.getElementById("cognome").value;
+  // Stampo tutto in console
+  console.log(persona);
+};
 
-      // Prendo il valore inserito nel campo età
-      let eta = document.getElementById("eta").value;
-
-      // Creo un oggetto chiamato "persona"
-      // e assegno i valori inseriti dall'utente
-      let persona = {
-        nome: nome,         // proprietà nome
-        cognome: cognome,   // proprietà cognome
-        eta: eta            // proprietà età
-      };
-
-      // Stampo l'intero oggetto nella console
-      console.log(persona);
-
-      // Stampo anche le singole proprietà (facoltativo)
-      console.log("Nome:", persona.nome);
-      console.log("Cognome:", persona.cognome);
-      console.log("Età:", persona.eta);
-
-    });
-
-  </script>
+</script>
 
 </body>
 </html>
