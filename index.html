@@ -77,48 +77,23 @@
       color: #00387b;
       font-size: 36px;
       margin: 0;
-      letter-spacing: 1px;
     }
 
     .card {
       background-color: rgba(255, 255, 255, 0.95);
       margin: 30px auto;
-      padding: 35px;
+      padding: 60px 20px;
       border-radius: 15px;
-      max-width: 850px;
+      max-width: 900px;
       box-shadow: 0 8px 30px rgba(0,0,0,0.5);
+      text-align: center;
     }
 
-    h2 { color: #00387b; border-bottom: 2px solid #00387b; padding-bottom: 10px; }
-
-    .grid-container {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 25px;
-      margin-top: 20px;
-    }
-
-    .box {
-      background: #fdfdfd;
-      padding: 20px;
-      border-radius: 10px;
-      border: 1px solid #eee;
-    }
-
-    ul { list-style: none; padding: 0; }
-    li { padding: 10px 0; border-bottom: 1px solid #f1f1f1; }
-    li:last-child { border-bottom: none; }
-    
-    .link-custom {
-      color: #0050aa;
-      text-decoration: none;
+    .main-text {
+      font-size: 28px;
+      color: #00387b;
       font-weight: bold;
-      display: flex;
-      align-items: center;
     }
-
-    .link-custom i { margin-right: 10px; width: 20px; text-align: center; }
-    .link-custom:hover { color: #00387b; text-decoration: underline; }
 
     footer {
       text-align: center;
@@ -144,14 +119,13 @@
       📂 Esercizi <i class="fa fa-caret-down"></i>
     </button>
 
-    <!-- 🔥 MENU ESERCIZI CORRETTO -->
     <div class="dropdown-content" id="menuEsercizi">
-      <a href="ES03/esercizioA.html">Esercizio A</a>
-      <a href="ES03/esercizioB.html">Esercizio B</a>
-      <a href="ES03/esercizioC.html">Esercizio C</a>
-      <a href="ES03/esercizioC.html">Esercizio D</a>
-      <a href="ES04/esercizio3c.html">Esercizio 3 (ES04)</a>
-<a href="ES05/esercizio1.html">Esercizio 1 Oggetto persona(ES05)</a>
+      <a href="ES03/esercizioA.html">Esercizio A Scatola</a>
+      <a href="ES03/esercizioB.html">Esercizio B Inserzioni</a>
+      <a href="ES03/esercizioC.html">Esercizio C Voto</a>
+      <a href="ES03/esercizioD.html">Esercizio D Var e Let</a>
+      <a href="ES04/esercizio3c.html">Esercizio 3 (ES04) Calcolatrice</a>
+      <a href="ES05/esercizio1.html">Esercizio 1 Oggetto persona (ES05)</a>
     </div>
   </div>
 
@@ -170,30 +144,9 @@
 </div>
 
 <div class="card">
-  <h2>Area Web Personale</h2>
-  <p>Bentornata nel tuo spazio didattico. Da qui puoi gestire tutti i tuoi progetti web.</p>
-
-  <div class="grid-container">
-    <div class="box">
-      <h3>🚀 Risorse Attive</h3>
-      <ul>
-        <li><a href="a.html" class="link-custom"><i class="fa fa-file-code-o"></i> Esercizio A</a></li>
-        <li><a href="esercizioa.html" class="link-custom"><i class="fa fa-file-code-o"></i> Esercizio B</a></li>
-        <li><a href="style.css" class="link-custom"><i class="fa fa-css3"></i> style.css</a></li>
-        <li><a href="script.js" class="link-custom"><i class="fa fa-terminal"></i> script.js</a></li>
-      </ul>
-    </div>
-
-    <div class="box">
-      <h3>📁 Tipi di File Supportati</h3>
-      <ul>
-        <li><i class="fa fa-check"></i> HTML & PHP</li>
-        <li><i class="fa fa-check"></i> CSS & JavaScript</li>
-        <li><i class="fa fa-check"></i> Immagini (JPG, PNG, SVG)</li>
-        <li><i class="fa fa-check"></i> Documenti JSON & XML</li>
-      </ul>
-    </div>
-  </div>
+  <p class="main-text">
+    Per visualizzare gli esercizi, utilizza la sezione “Esercizi” nella barra di navigazione in alto.
+  </p>
 </div>
 
 <footer>
