@@ -2,54 +2,87 @@
 <html>
 <head>
     <style>
-        body { font-family: sans-serif; text-align: center; padding: 50px; }
-        .btn { background: #007bff; color: white; padding: 10px 20px; border-radius: 5px; border: none; cursor: pointer; }
+        /* Stile base della pagina */
+        body { 
+            font-family: sans-serif; 
+            text-align: center; 
+            padding: 50px; 
+        }
+
+        /* Stile del bottone */
+        .btn { 
+            background: #007bff; 
+            color: white; 
+            padding: 10px 20px; 
+            border-radius: 5px; 
+            border: none; 
+            cursor: pointer; 
+        }
         
-        /* Questo è il box della tua foto */
+        /* Box dove verrà mostrato il risultato o errore */
         #output {
             margin: 20px auto;
             padding: 20px;
             width: 80%;
             max-width: 400px;
-            background-color: #f8d7da; /* Rosa errore */
+            background-color: #f8d7da; /* colore rosa (tipo errore) */
             color: #721c24;
             border: 1px solid #f5c6cb;
             border-radius: 10px;
-            display: none; /* Nascosto finché non logghiamo qualcosa */
+            display: none; /* inizialmente nascosto */
         }
     </style>
 </head>
 <body>
 
     <h1>Calcolatrice JS</h1>
+
+    <!-- Bottone che avvia la funzione -->
     <button class="btn" onclick="avvia()">Avvia Calcolo</button>
 
+    <!-- Contenitore per mostrare output -->
     <div id="output"></div>
 
     <script>
-        // --- IL TRUCCO: Riorientiamo console.log verso la pagina ---
+        // Prendiamo il riferimento al box HTML
         const box = document.getElementById("output");
         
+        // Sovrascriviamo console.log per mostrare i messaggi nella pagina
         console.log = function(messaggio) {
-            box.innerHTML = messaggio; // Scrive il messaggio nel box rosa
-            box.style.display = "block"; // Rende il box visibile
+            box.innerHTML = messaggio; // inserisce il testo nel box
+            box.style.display = "block"; // rende visibile il box
         };
-        // -----------------------------------------------------------
 
+        // Funzione principale chiamata dal bottone
         function avvia() {
-            let larghezza = parseFloat(prompt("Inserisci la larghezza:"));
-            let altezza = parseFloat(prompt("Inserisci l'altezza:"));
-            let lunghezza = parseFloat(prompt("Inserisci la lunghezza:"));
 
+            // Chiediamo i dati all’utente (stringhe)
+            let larghezza = prompt("Inserisci la larghezza:");
+            let altezza = prompt("Inserisci l'altezza:");
+            let lunghezza = prompt("Inserisci la lunghezza:");
+
+            // Controllo: se l'utente annulla o lascia vuoto
+            if (!larghezza || !altezza || !lunghezza) {
+                console.log("Errore: hai annullato o lasciato un campo vuoto!");
+                return; // blocca la funzione
+            }
+
+            // Convertiamo le stringhe in numeri decimali
+            larghezza = parseFloat(larghezza);
+            altezza = parseFloat(altezza);
+            lunghezza = parseFloat(lunghezza);
+
+            // Controllo: se uno dei valori non è un numero
+            if (isNaN(larghezza) || isNaN(altezza) || isNaN(lunghezza)) {
+                console.log("Errore: Inserisci numeri validi!");
+                return; // blocca la funzione
+            }
+
+            // Calcolo del volume (formula: larghezza × altezza × lunghezza)
             let volume = larghezza * altezza * lunghezza;
 
-            if (isNaN(volume)) {
-                // USIAMO CONSOLE.LOG COME RICHIESTO
-                // Ora questo non va più nella console segreta, ma appare nel box rosa!
-                console.log("Errore: Inserisci numeri validi!"); 
-            } else {
-                console.log("Il volume calcolato è: " + volume);
-            }
+            // Mostriamo il risultato
+            console.log("Il volume calcolato è: " + volume);
         }
     </script>
 
