@@ -2,14 +2,12 @@
 <html>
 <head>
     <style>
-        /* Stile base della pagina */
         body { 
             font-family: sans-serif; 
             text-align: center; 
             padding: 50px; 
         }
 
-        /* Stile del bottone */
         .btn { 
             background: #007bff; 
             color: white; 
@@ -18,18 +16,17 @@
             border: none; 
             cursor: pointer; 
         }
-        
-        /* Box dove verrà mostrato il risultato o errore */
+
         #output {
             margin: 20px auto;
             padding: 20px;
             width: 80%;
             max-width: 400px;
-            background-color: #f8d7da; /* colore rosa (tipo errore) */
+            background-color: #f8d7da;
             color: #721c24;
             border: 1px solid #f5c6cb;
             border-radius: 10px;
-            display: none; /* inizialmente nascosto */
+            display: none;
         }
     </style>
 </head>
@@ -37,52 +34,61 @@
 
     <h1>Calcolatrice JS</h1>
 
-    <!-- Bottone che avvia la funzione -->
-    <button class="btn" onclick="avvia()">Avvia Calcolo</button>
+    <button class="btn" onclick="calcola()">Avvia Calcolo</button>
 
-    <!-- Contenitore per mostrare output -->
     <div id="output"></div>
 
     <script>
-        // Prendiamo il riferimento al box HTML
         const box = document.getElementById("output");
-        
-        // Sovrascriviamo console.log per mostrare i messaggi nella pagina
-        console.log = function(messaggio) {
-            box.innerHTML = messaggio; // inserisce il testo nel box
-            box.style.display = "block"; // rende visibile il box
-        };
 
-        // Funzione principale chiamata dal bottone
-        function avvia() {
+        // Funzione per mostrare messaggi nella pagina
+        function mostra(messaggio) {
+            box.innerHTML = messaggio;
+            box.style.display = "block";
+        }
 
-            // Chiediamo i dati all’utente (stringhe)
-            let larghezza = prompt("Inserisci la larghezza:");
-            let altezza = prompt("Inserisci l'altezza:");
-            let lunghezza = prompt("Inserisci la lunghezza:");
+        function calcola() {
 
-            // Controllo: se l'utente annulla o lascia vuoto
-            if (!larghezza || !altezza || !lunghezza) {
-                console.log("Errore: hai annullato o lasciato un campo vuoto!");
-                return; // blocca la funzione
+            // Input utente
+            let num1 = parseFloat(prompt("Inserisci il primo numero:"));
+            let operazione = prompt("Inserisci operazione (+ - * / **):");
+            let num2 = parseFloat(prompt("Inserisci il secondo numero:"));
+
+            // Controllo numeri validi
+            if (isNaN(num1) || isNaN(num2)) {
+                mostra("Errore: devi inserire numeri validi!");
+                return;
             }
 
-            // Convertiamo le stringhe in numeri decimali
-            larghezza = parseFloat(larghezza);
-            altezza = parseFloat(altezza);
-            lunghezza = parseFloat(lunghezza);
+            let risultato;
 
-            // Controllo: se uno dei valori non è un numero
-            if (isNaN(larghezza) || isNaN(altezza) || isNaN(lunghezza)) {
-                console.log("Errore: Inserisci numeri validi!");
-                return; // blocca la funzione
+            // Controllo operazione
+            if (operazione === "+") {
+                risultato = num1 + num2;
+            } 
+            else if (operazione === "-") {
+                risultato = num1 - num2;
+            } 
+            else if (operazione === "*") {
+                risultato = num1 * num2;
+            } 
+            else if (operazione === "/") {
+                if (num2 === 0) {
+                    mostra("Errore: divisione per zero!");
+                    return;
+                }
+                risultato = num1 / num2;
+            } 
+            else if (operazione === "**") {
+                risultato = num1 ** num2;
+            } 
+            else {
+                mostra("Errore: operazione non valida!");
+                return;
             }
 
-            // Calcolo del volume (formula: larghezza × altezza × lunghezza)
-            let volume = larghezza * altezza * lunghezza;
-
-            // Mostriamo il risultato
-            console.log("Il volume calcolato è: " + volume);
+            // Output finale
+            mostra("Risultato: " + risultato);
         }
     </script>
 
