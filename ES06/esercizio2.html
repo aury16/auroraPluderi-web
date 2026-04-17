@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+
+    <style>
+        /* Stile base della pagina */
+        body {
+            font-family: sans-serif;
+            text-align: center;
+            padding: 50px;
+        }
+
+        /* Bottone semplice */
+        button {
+            padding: 10px 20px;
+            background: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Inverti cifre numero</h1>
+
+    <!-- Bottone che avvia il programma -->
+    <button onclick="avvia()">Avvia</button>
+
+    <script>
+
+        /*
+            FUNZIONE RICHIESTA:
+            prende un numero intero e restituisce le cifre invertite
+        */
+        function inverti_cifre(numero) {
+
+            // trasformo il numero in stringa
+            let testo = numero.toString();
+
+            // separo le cifre in array
+            let array = testo.split("");
+
+            // inverto l’array
+            array = array.reverse();
+
+            // ricompongo le cifre in una stringa
+            let invertito = array.join("");
+
+            // restituisco il risultato
+            return invertito;
+        }
+
+        /*
+            FUNZIONE PRINCIPALE
+            gestisce input e output
+        */
+        function avvia() {
+
+            // chiedo il numero all’utente
+            let num = parseInt(prompt("Inserisci un numero intero:"));
+
+            // controllo se è un numero valido
+            if (isNaN(num)) {
+                alert("Errore: devi inserire un numero valido!");
+                return;
+            }
+
+            // chiamo la funzione richiesta
+            let risultato = inverti_cifre(num);
+
+            // mostro il risultato all’utente
+            alert("Numero invertito: " + risultato);
+        }
+
+    </script>
+
+</body>
+</html>
