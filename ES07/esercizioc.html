@@ -1,11 +1,9 @@
 <!DOCTYPE html>
 <html lang="it">
-
 <head>
     <meta charset="UTF-8">
     <title>Esercizio C - Pulsanti</title>
 </head>
-
 <body>
 
     <h1>Pulsanti colorati</h1>
@@ -14,22 +12,17 @@
     <button>Bottone 2</button>
 
     <script>
+        // 1. Seleziono tutti i bottoni della pagina
+        const bottoni = document.querySelectorAll("button");
 
-        // seleziono tutti i bottoni della pagina
-        let bottoni = document.querySelectorAll("button");
-
-        // ciclo tutti i bottoni
-        for (let i = 0; i < bottoni.length; i++) {
-
-            // cambio il colore di sfondo
-            bottoni[i].style.backgroundColor = "blue";
-
-            // cambio il colore del testo
-            bottoni[i].style.color = "white";
-        }
-
+        // 2. Ciclo tutti i bottoni per cambiare lo stile via JavaScript
+        bottoni.forEach(bottone => {
+            // Cambio il colore di sfondo in blu
+            bottone.style.backgroundColor = "blue";
+            // Cambio il colore del testo in bianco
+            bottone.style.color = "white";
+        });
     </script>
 
 </body>
-
 </html>
