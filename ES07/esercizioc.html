@@ -12,16 +12,21 @@
     <button>Bottone 2</button>
 
     <script>
-        // 1. Seleziono tutti i bottoni della pagina
+        // Seleziono tutti i nodi di tipo "button" presenti nel DOM
+        // querySelectorAll restituisce una collezione (NodeList)
         const bottoni = document.querySelectorAll("button");
 
-        // 2. Ciclo tutti i bottoni per cambiare lo stile via JavaScript
-        bottoni.forEach(bottone => {
-            // Cambio il colore di sfondo in blu
-            bottone.style.backgroundColor = "blue";
-            // Cambio il colore del testo in bianco
-            bottone.style.color = "white";
-        });
+        // Utilizzo un ciclo per scorrere la collezione di bottoni
+        for (let i = 0; i < bottoni.length; i++) {
+            
+            // Accedo al singolo bottone tramite l'indice [i] e ne modifico lo stile
+            
+            // Imposto il colore di sfondo (background-color) su blu
+            bottoni[i].style.backgroundColor = "blue";
+
+            // Imposto il colore del testo (color) su bianco
+            bottoni[i].style.color = "white";
+        }
     </script>
 
 </body>
