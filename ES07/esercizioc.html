@@ -1,33 +1,35 @@
 <!DOCTYPE html>
 <html lang="it">
+
 <head>
     <meta charset="UTF-8">
     <title>Esercizio C - Pulsanti</title>
 </head>
+
 <body>
 
-<h1>Pulsanti colorati</h1>
+    <h1>Pulsanti colorati</h1>
 
-<button>Bottone 1</button>
-<button>Bottone 2</button>
+    <button>Bottone 1</button>
+    <button>Bottone 2</button>
 
-<script>
+    <script>
 
-// seleziono tutti i bottoni
-let bottoni = document.querySelectorAll("button");
+        // seleziono tutti i bottoni della pagina
+        let bottoni = document.querySelectorAll("button");
 
-// ciclo ogni bottone
-bottoni.forEach(btn => {
+        // ciclo tutti i bottoni
+        for (let i = 0; i < bottoni.length; i++) {
 
-    // cambio colore sfondo
-    btn.style.backgroundColor = "blue";
+            // cambio il colore di sfondo
+            bottoni[i].style.backgroundColor = "blue";
 
-    // cambio colore testo
-    btn.style.color = "white";
+            // cambio il colore del testo
+            bottoni[i].style.color = "white";
+        }
 
-});
-
-</script>
+    </script>
 
 </body>
+
 </html>
