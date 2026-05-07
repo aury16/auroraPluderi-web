@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <title>Esercizio C - Pulsanti</title>
+</head>
+<body>
+
+    <h1>Pulsanti colorati</h1>
+
+    <button>Bottone 1</button>
+    <button>Bottone 2</button>
+
+    <script>
+        // Seleziono tutti i nodi di tipo "button" presenti nel DOM
+        // querySelectorAll restituisce una collezione (NodeList)
+        const bottoni = document.querySelectorAll("button");
+
+        // Utilizzo un ciclo per scorrere la collezione di bottoni
+        for (let i = 0; i < bottoni.length; i++) {
+
+            // Accedo al singolo bottone tramite l'indice [i] e ne modifico>
+
+            // Imposto il colore di sfondo (background-color) su blu
+            bottoni[i].style.backgroundColor = "blue";
+
+            // Imposto il colore del testo (color) su bianco
+            bottoni[i].style.color = "white";
+        }
+    </script>
+
+</body>
+</html>
+
+
