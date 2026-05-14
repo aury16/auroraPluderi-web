@@ -1,0 +1,15 @@
+// 1. Creo il nuovo elemento paragrafo
+let nuovoParagrafo = document.createElement("p");
+
+// 2. Aggiungo del testo al paragrafo
+nuovoParagrafo.textContent = "Questo è il paragrafo inserito PRIMA.";
+
+// 3. Seleziono l'elemento di riferimento (quello prima del quale voglio inserire)
+let elementoRiferimento = document.getElementById("paragrafo-esistente");
+
+// 4. Seleziono il contenitore padre
+let contenitorePadre = elementoRiferimento.parentNode;
+
+// 5. Uso insertBefore: (nuovo_nodo, nodo_di_riferimento)
+// Questo sposta o inserisce il nuovo paragrafo esattamente sopra quello di riferimento
+contenitorePadre.insertBefore(nuovoParagrafo, elementoRiferimento);
