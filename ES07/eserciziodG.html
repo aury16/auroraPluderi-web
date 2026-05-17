@@ -1,21 +1,43 @@
-function trasforma() {
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Convertitore di Testo</title>
+    <style>
+        /* Un pizzico di stile per farlo somigliare al tuo screenshot */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        input, button {
+            padding: 8px;
+            font-size: 16px;
+            margin-right: 5px;
+        }
+    </style>
+</head>
+<body>
 
-    // 1. Selezione dell'elemento (Slide 7: getElementById)
+    <h1>Convertitore di Testo</h1>
 
-    let input = document.getElementById("campoTesto");
+    <input type="text" id="campoTesto" placeholder="Scrivi qualcosa...">
 
+    <button onclick="trasforma()">Converti in Maiuscolo</button>
 
+    <script>
+        // 3. Il codice JavaScript corretto e formattato bene
+        function trasforma() { 
+            // Selezione dell'elemento tramite ID
+            let input = document.getElementById("campoTesto"); 
+            
+            // Prendiamo il valore inserito e lo convertiamo in maiuscolo
+            let valoreMaiuscolo = input.value.toUpperCase(); 
+            
+            // Sovrascriviamo il testo vecchio con quello nuovo in maiuscolo
+            input.value = valoreMaiuscolo; 
+        }
+    </script>
 
-    // 2. Manipolazione della propriet   'value' (Slide 10: Accesso agli att>
-
-    // Prendiamo il valore e usiamo il metodo standard JS toUpperCase()
-
-    let valoreMaiuscolo = input.value.toUpperCase();
-
-
-
-    // 3. Riapplichiamo il valore modificato all'elemento
-
-    input.value = valoreMaiuscolo;
-
-}
+</body>
+</html>
