@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <title>Esercizio: Tavola Pitagorica Dinamica</title>
+</head>
+<body>
+
+    <h1>Tavola Pitagorica 10x10</h1>
+    <p>Generata dinamicamente tramite manipolazione del DOM</p>
+    
+    <div id="contenitore-tabella"></div>
+
+    <script>
+        function generaTavolaPitagorica() {
+            // SELEZIONE DEL CONTENITORE (Slide 7)
+            let contenitore = document.getElementById("contenitore-tabella");
+
+            // CREAZIONE DELLA TABELLA (Slide 16)
+            let tabella = document.createElement("table");
+            
+            // Impostazione del bordo per mostrare la griglia (Come da seconda immagine del collaudo)
+            tabella.border = "1"; 
+
+            // CICLO ESTERNO PER LE RIGHE (Matrice 10x10)
+            for (let i = 1; i <= 10; i++) {
+                
+                // CREAZIONE DELLA RIGA (Slide 16)
+                let riga = document.createElement("tr");
+
+                // CICLO INTERNO PER LE CELLE (Colonne)
+                for (let j = 1; j <= 10; j++) {
+                    
+                    // CREAZIONE DELLA CELLA (Slide 16)
+                    let cella = document.createElement("td");
+
+                    // CALCOLO DEL PRODOTTO
+                    let prodotto = i * j;
+                    
+                    // CREAZIONE DEL NODO DI TESTO (Slide 17)
+                    let nodoTesto = document.createTextNode(prodotto);
+                    
+                    // COSTRUZIONE DELLA GERARCHIA (Slide 18 e 19)
+                    // Appendiamo il testo dentro la cella <td>
+                    cella.appendChild(nodoTesto);
+                    
+                    // Appendiamo la cella <td> dentro la riga <tr>
+                    riga.appendChild(cella);
+                }
+
+                // AGGANCIO DELLA RIGA ALLA TABELLA (Slide 18)
+                tabella.appendChild(riga);
+            }
+
+            // INIEZIONE FINALE NEL DOCUMENTO (Slide 18)
+            contenitore.appendChild(tabella);
+        }
+
+        // GESTIONE DELL'EVENTO DI CARICAMENTO
+        window.onload = generaTavolaPitagorica;
+    </script>
+
+</body>
+</html>
